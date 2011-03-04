@@ -1,0 +1,16 @@
+rvm use ree-1.8.7-2011.03@cloud_config --create
+if [ $(gem list bundler | grep bundler | wc -l) -lt 1 ]; then 
+  gem install bundler --no-ri --no-rdoc
+  echo
+  echo "### Cloud config installation ###"
+  echo
+  echo "Run:"
+  echo
+  echo "  bundle install"
+  echo
+  echo "You may also need:"
+  echo
+  echo "  brew install libxml2"  # libxslt too? For nokokgiri (a fog dependency)
+  echo "  brew install readline" # For highline?
+  echo
+fi
